@@ -1,0 +1,40 @@
+
+:root{
+    --card-border-color:#fde68a;
+}
+
+.cards-container{
+    border: 3px solid var(--card-border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    width: 300px;
+    margin-top: 50px;
+    margin-inline: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    -webkit-box-shadow: -3px 3px 10px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 3px 10px -3px rgba(0,0,0,0.75);
+    box-shadow: -3px 3px 10px -3px rgba(0,0,0,0.75);
+    position: relative;
+}
+.cards-container>button{
+    font-weight: bold;
+    /* color: var(--text-color-button); */
+    /* color: var(--card-border-color); */
+    /* font-size: 10px; */
+    position: absolute;
+    bottom: -20px;
+    right: 15px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    border: none;
+    background-color: var(--card-border-color);
+    /* background-color: white; */
+    -webkit-box-shadow: -3px 3px 10px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 3px 10px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: -3px 3px 10px -3px rgba(0, 0, 0, 0.75);
+}
