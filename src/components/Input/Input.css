@@ -1,6 +1,4 @@
-:root{
-    --text-color-button:white;
-}
+
 .input-container {
     border: 2px solid var(--card-border-color);
     display: flex;

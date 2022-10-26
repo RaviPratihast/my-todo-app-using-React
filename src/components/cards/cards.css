@@ -1,7 +1,4 @@
 
-:root{
-    --card-border-color:#fde68a;
-}
 
 .cards-container{
     border: 3px solid var(--card-border-color);

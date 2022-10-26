@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --text-color-button:white;
+  --bg-color-header: #fef08a;
+  --card-border-color:#fde68a;
+}
 
 body {
   
