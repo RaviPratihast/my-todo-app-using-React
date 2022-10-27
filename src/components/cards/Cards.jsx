@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
 import "./cards.css"
 
 function Card(props) {
@@ -13,7 +14,7 @@ function Card(props) {
             <p>motion of the sun is going down,what is your name of the cat and do you thing it would go like that</p> */}
             <h3>{props.title}</h3>
             <p>{props.content}</p>
-            <button onClick={handleClick}>X</button>
+            <button onClick={handleClick}><DeleteIcon/></button>
         </div>
     )
 
