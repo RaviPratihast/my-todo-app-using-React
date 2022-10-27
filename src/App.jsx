@@ -20,10 +20,15 @@ function App(){
    }
 
 
-   // function deleteNote(id){
-   // //   console.log(`delete request of id:${id}`);
+   function deleteNote(id){
+   //   console.log(`delete request of id:${id}`);
+    setNotes(prevNotes=>{
+      return prevNotes.filter((note,index)=>{
+         return index!==id;
+      })
+    })
 
-   // }
+   }
 
    return <div className="main-app-container">
      <Header/>
@@ -32,7 +37,7 @@ function App(){
         {/* {[1,2,3,4,5].map((curr)=><Card/>)} */}
        {
          notes.map((item,index)=>{
-            return <Card key={index} id={index} title={item.title} content={item.content}/>
+            return <Card onDelete={deleteNote} key={index} id={index} title={item.title} content={item.content}/>
          })
        }
 
