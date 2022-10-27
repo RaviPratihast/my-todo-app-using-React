@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "./components/Header/header.jsx";
 import Input from "./components/Input/Input.jsx";
 import Card from "./components/cards/Cards.jsx"
@@ -6,30 +6,35 @@ import Card from "./components/cards/Cards.jsx"
 import "./App.css"
 
 function App(){
+
+   const [notes,setNotes]=useState([])
+
+   function addNotes(newNote){
+      // this function is gonna receive the note object and it will get inserted inside the array.
+      // console.log(newNote);
+      setNotes(prev=>{
+         return [
+            ...prev,newNote
+         ];
+      })
+   }
+
+
+   // function deleteNote(id){
+   // //   console.log(`delete request of id:${id}`);
+
+   // }
+
    return <div className="main-app-container">
      <Header/>
-     <Input/>
+     <Input onAdd={addNotes}/>
      <div className="card-element-section" >
         {/* {[1,2,3,4,5].map((curr)=><Card/>)} */}
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+       {
+         notes.map((item,index)=>{
+            return <Card key={index} id={index} title={item.title} content={item.content}/>
+         })
+       }
 
      </div>
     
