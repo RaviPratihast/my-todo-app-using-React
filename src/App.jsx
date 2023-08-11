@@ -8,7 +8,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   function addNotes(newNote) {
     setNotes((prev) => {
-      return [...prev, newNote];
+      return [newNote, ...prev];
     });
   }
   function deleteNote(id) {
