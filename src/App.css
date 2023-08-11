@@ -5,9 +5,9 @@
 
 .main-app-container > .card-element-section {
   display: flex;
- align-items: center;
- justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-inline: 100px;
+  margin-inline: 70px;
   margin-top: 23px;
 }
