@@ -6,9 +6,9 @@ import "./header.css";
 function Header() {
   return (
     <>
-      <header>
+      <header className="header-component">
         {/* The Logo */}
-        <h2>
+        <h2 className="Logo-text">
           personal<span>Note</span>
           <CreateIcon />
         </h2>

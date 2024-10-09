@@ -1,18 +1,20 @@
-
-
-header {
-    border: 1px solid black;
-    padding: 1.3rem;
-    /* background-color: var(--bg-color-header); */
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+.header-component {
+  border: 1px solid rgb(190, 191, 185);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.3rem;
+  /* background-color: var(--bg-color-header); */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
-header>h2 {
-    margin-left: 50px;
-    font-weight:100;
+header > h2 {
+  margin-left: 50px;
+  font-weight: 100;
 }
-header>h2>span{
-    font-weight: bold;
+header > h2 > span {
+  font-weight: bold;
 }
