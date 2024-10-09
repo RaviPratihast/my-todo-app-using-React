@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1.3rem;
+  padding: .5rem;
   /* background-color: var(--bg-color-header); */
   position: fixed;
   width: 100%;
