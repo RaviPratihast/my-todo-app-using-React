@@ -1,17 +1,12 @@
 
 
 header {
-    /* border: 2px solid black; */
-    padding: 30px;
-    background-color: var(--bg-color-header);
-    -webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+    border: 1px solid black;
+    padding: 1.3rem;
+    /* background-color: var(--bg-color-header); */
     position: fixed;
     width: 100%;
     z-index: 1;
-    /* overflow: hidden;
-    scroll-behavior: auto; */
 }
 
 header>h2 {
