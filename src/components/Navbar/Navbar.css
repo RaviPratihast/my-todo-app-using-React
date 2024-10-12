@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #333; */
   padding: 10px 20px;
 }
 
@@ -18,6 +17,16 @@
   font-size: 18px;
 }
 
-.icon{
-    font-size: 2.2rem;
+.icon {
+  font-size: 2.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  background-color: rgb(246, 247, 248);
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid rgb(241, 239, 239);
+}
+.icon:hover {
+  transform: scale(1.1);
+  background-color: rgb(191, 193, 194);
 }

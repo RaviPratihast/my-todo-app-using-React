@@ -39,7 +39,9 @@ Personal Note app is basic note taking app.
   - React JS
   - CSS3
   - Flexbox Layout
+  - State Management using Hooks
 
 ## Resources
 
 - [Material Symbols & Icons](https://fonts.google.com/icons)
+- [React Icons](https://react-icons.github.io/react-icons/)

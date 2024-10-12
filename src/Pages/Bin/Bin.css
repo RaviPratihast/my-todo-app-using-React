@@ -1,0 +1,17 @@
+.bin-container {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  margin-top: 5.5rem;
+  margin-left: 9.04rem;
+  margin-top: 4.9rem;
+  max-height: 100vh;
+}
+
+.card-bin-element-section {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-inline: 10rem;
+  margin-bottom: 5rem;
+}
