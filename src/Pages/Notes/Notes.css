@@ -1,6 +1,9 @@
 .main-app-container {
   display: flex;
   flex-direction: column;
+  margin-top: 4.9rem;
+  margin-left: 9.9rem;
+  margin-bottom: 5rem;
 }
 
 .main-app-container > .card-element-section {
@@ -8,6 +11,5 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-inline: 70px;
-  margin-top: 23px;
+  margin-inline: 10rem;
 }

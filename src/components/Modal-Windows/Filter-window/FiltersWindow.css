@@ -1,0 +1,31 @@
+.filter-container {
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+  border: 1px solid rgb(206, 203, 203);
+  position: absolute;
+  top: 3.5rem;
+  right: 6rem;
+  border-radius: 0.3rem;
+
+  max-height: 20rem;
+  overflow: auto;
+  max-width: 15rem;
+  padding: 1rem;
+  background-color: white;
+  z-index: 1;
+}
+.sort-by-filter-container {
+  display: flex;
+  flex-direction: column;
+}
+.sort-by-filter-container h2 {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+.sort-by-priority-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}

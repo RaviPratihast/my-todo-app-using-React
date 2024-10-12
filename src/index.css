@@ -3,17 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  --text-color-button: white;
-  --bg-color-header: #fef08a;
-  --card-border-color: #fde68a;
-}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   scroll-behavior: smooth;
+}
+.empty-container-message{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-top: 0.9rem;
+  font-weight: 700;
+}
+.empty-container-message p{
+  color: rgb(109, 109, 109);
+
 }

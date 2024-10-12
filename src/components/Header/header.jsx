@@ -1,14 +1,27 @@
 import React from "react";
-import CreateIcon from '@mui/icons-material/Create';
+import { useLocation } from "react-router-dom";
+import CreateIcon from "@mui/icons-material/Create";
+import { Search, Navbar } from "../index-component";
 import "./header.css";
 
-function Header(){
-    return <>
-        <header>
-            <h2>personal<span>Note</span><CreateIcon/></h2>
-        </header>
+function Header() {
+  const location = useLocation();
+  const isNotes = location.pathname === "/notes";
+
+  return (
+    <>
+      <header className="header-component">
+        <h2 className="Logo-text">
+          personal<span>Note</span>
+          <CreateIcon />
+        </h2>
+
+        {isNotes && <Search />}
+
+        <Navbar />
+      </header>
     </>
+  );
 }
 
-
-export default Header;
+export { Header };
