@@ -1,8 +1,8 @@
 import React from "react";
-import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { GrNotes } from "react-icons/gr";
-import { MdLabel } from "react-icons/md";
-import { IoArchive } from "react-icons/io5";
+// import { MdLabel } from "react-icons/md";
+// import { IoArchive } from "react-icons/io5";
 import { RiDeleteBinFill } from "react-icons/ri";
 
 import "./Sidenav.css";
