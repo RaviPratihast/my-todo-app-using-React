@@ -28,10 +28,6 @@ Personal Note app is basic note taking app.
   - Create Notes
   - Trash Notes
 
-## Demo
-
-- It is just a demo, for better look of this app go to the about section, have added a link for this App.
-  ![Personal Note](/public/note%20app.gif)
 
 ## Tech
 
