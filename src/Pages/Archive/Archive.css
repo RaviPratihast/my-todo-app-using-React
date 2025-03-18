@@ -1,11 +1,18 @@
 .archive-container {
   display: flex;
-  align-items: center;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding-left: 2rem;
-  margin-top: 5.5rem;
   margin-left: 9.9rem;
   margin-top: 4.9rem;
   max-height: 100vh;
+  /* border: 1px solid green; */
 }
+.empty-container-message {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  /* border: 1px solid red; */
+}
+

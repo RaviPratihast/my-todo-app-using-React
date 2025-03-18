@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { GrNotes } from "react-icons/gr";
 // import { MdLabel } from "react-icons/md";
-// import { IoArchive } from "react-icons/io5";
+import { IoArchive } from "react-icons/io5";
 import { RiDeleteBinFill } from "react-icons/ri";
 
 import "./Sidenav.css";
@@ -22,12 +22,12 @@ const Sidenav = () => {
           Label
         </li>
       </NavLink> */}
-      {/* <NavLink to="/archive" className="nav-link-routes">
+      <NavLink to="/archive" className="nav-link-routes">
         <li>
           <IoArchive />
           Archive
         </li>
-      </NavLink> */}
+      </NavLink>
       <NavLink to="/bin" className="nav-link-routes">
         <li>
           <RiDeleteBinFill />

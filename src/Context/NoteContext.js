@@ -7,6 +7,7 @@ const useNotes = () => useContext(NotesContext);
 let initialState = {
   notes: [],
   deletedNote: [],
+  archive: [],
   searchQuery: "",
 };
 

@@ -19,7 +19,7 @@ body {
   margin-top: 0.9rem;
   font-weight: 700;
 }
-.empty-container-message p{
+.empty-container-message  {
   color: rgb(109, 109, 109);
 
 }

@@ -24,21 +24,21 @@ const Notes = () => {
     toast.info("Note moved to the bin.", { autoClose: 500 });
   }
 
-  const filteredNotes = state.notes.filter((note) =>
-    note.title.toLowerCase().startsWith(state.searchQuery)
-  );
+  // const filteredNotes = state.notes.filter((note) =>
+  //   note.title.toLowerCase().startsWith(state.searchQuery)
+  // );
   return (
     <>
       <Sidenav />
       <div className="main-app-container">
         <Input onAdd={addNotes} />
         <div className="card-element-section">
-          {filteredNotes.map((item) => (
+          {state.notes.map((note) => (
             <Card
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              content={item.content}
+              key={note.id}
+              id={note.id}
+              title={note.title}
+              content={note.content}
               onDelete={deleteNote}
             />
           ))}
