@@ -59,7 +59,15 @@ const notesReducer = (state, action) => {
           archive: state.archive.filter((note) => note.id !== action.payload),
           notes: [restoredArchiveNote, ...state.notes],
         };
-
+        case "RESTORE_NOTE":
+          const restoredNote = state.deletedNote.find(
+            (note) => note.id === action.payload
+          );
+          return {
+            ...state,
+            deletedNote: state.deletedNote.filter((note) => note.id !== action.payload),
+            notes: [restoredNote, ...state.notes],
+          };
     default:
       return state;
   }
