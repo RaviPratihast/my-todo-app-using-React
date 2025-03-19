@@ -24,9 +24,11 @@ Personal Note app is basic note taking app.
 ```
 
 - Features
-  - [Home Page](https://personalnoteapp.netlify.app/)
+  - Login
+  - Landing Page
   - Create Notes
-  - Trash Notes
+  - Archive Notes & Unarchive Notes
+  - Trash Notes & Restore Notes
 
 
 ## Tech
