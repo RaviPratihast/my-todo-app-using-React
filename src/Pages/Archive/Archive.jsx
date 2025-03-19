@@ -13,20 +13,11 @@ const Archive = () => {
       type: "DELETE_NOTE_FROM_ARCHIVE",
       payload: id,
     });
-    // console.log(id);
+
     toast.info("Note moved to the bin.", { autoClose: 500 });
   }
 
-  // function unarchiveNote(id) {
-  //   dispatch({
-  //     type: "RESTORE_NOTE_FROM_ARCHIVE",
-  //     payload: id,
-  //   });
-  //   toast.success("Note unarchived.", { autoClose: 500 });
-  // }
-  // const filteredArchiveNotes = state.archive.filter((note) =>
-  //   note.title.toLowerCase().startsWith(state.searchQuery)
-  // );
+
   return (
     <>
       <Sidenav />

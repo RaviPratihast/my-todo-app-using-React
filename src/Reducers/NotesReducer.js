@@ -30,7 +30,7 @@ const notesReducer = (state, action) => {
         return {
           ...state,
           archive: state.archive.filter((note) => note.id !== action.payload),
-          // notes: [deletedNoteFromArchive, ...state.notes],
+          
           deletedNote: [deletedNoteFromArchive, ...state.deletedNote],
         };
 

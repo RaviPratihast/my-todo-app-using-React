@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
 const Notes = () => {
-  const { state, dispatch } = useNotes(); 
+  const { state, dispatch } = useNotes();
 
   function addNotes(newNote) {
     dispatch({
@@ -24,9 +24,6 @@ const Notes = () => {
     toast.info("Note moved to the bin.", { autoClose: 500 });
   }
 
-  // const filteredNotes = state.notes.filter((note) =>
-  //   note.title.toLowerCase().startsWith(state.searchQuery)
-  // );
   return (
     <>
       <Sidenav />
