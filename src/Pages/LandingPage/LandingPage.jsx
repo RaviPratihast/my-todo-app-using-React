@@ -7,10 +7,11 @@ import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
   const { stateAuth } = useAuth();
   const navigate = useNavigate();
+  const mobileGridBackground = `${process.env.PUBLIC_URL}/Dot grid@2x.png`;
 
   return (
     <>
-      <div className="home-wrapper">
+      <div className="home-wrapper" style={{ "--landing-mobile-bg": `url("${mobileGridBackground}")` }}>
         <div className="home-content">
           <div className="home-text">
             <p className="home-kicker">Monospace Workflow</p>

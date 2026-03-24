@@ -7,6 +7,7 @@ import "./Login.css";
 
 const Login = () => {
   const panelBackground = `${process.env.PUBLIC_URL}/image-landing.jpeg`;
+  const dotGridBg = `${process.env.PUBLIC_URL}/Dot grid@2x.png`;
   const navigate = useNavigate();
   const location = useLocation();
   const { stateAuth, dispatchAuth } = useAuth();
@@ -60,7 +61,7 @@ const Login = () => {
   }
 
   return (
-    <div className="auth-page">
+    <div className="auth-page" style={{ "--auth-mobile-bg": `url("${dotGridBg}")` }}>
       <div className="form-container">
         <p className="auth-kicker">PersonalNote</p>
         <h2>Log in</h2>
@@ -97,9 +98,7 @@ const Login = () => {
           Do not have an account?
           <span onClick={() => navigate("/signIn")}> Sign up</span>
         </p>
-        <div className="auth-meta">
-          Demo user: <strong>a</strong> / <strong>1</strong>
-        </div>
+        
       </div>
       <div
         className="auth-panel"

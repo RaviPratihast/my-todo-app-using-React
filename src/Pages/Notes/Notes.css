@@ -46,8 +46,14 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .main-app-container {
+    margin-top: 8.2rem;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .main-app-container {
-    margin-top: 7.45rem;
+    margin-top: 8.4rem;
   }
 }

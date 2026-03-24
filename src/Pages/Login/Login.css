@@ -121,27 +121,45 @@
     grid-template-columns: 1fr;
     padding: 0.8rem;
     margin-top: 72px;
+    background-image: var(--auth-mobile-bg);
+    background-repeat: repeat;
+    background-size: 300px auto;
+    background-position: center top;
+    min-height: calc(100vh - 72px);
+    align-items: start;
+    justify-items: center;
   }
 
   .auth-panel {
-    min-height: 220px;
-    background-position: center 64%;
-    padding: 1.2rem;
+    display: none;
   }
 
-  .auth-panel h3 {
-    font-size: 1.6rem;
+  .form-container {
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+/* At ≤620px the header switches to a 2-row grid with min-height 118px */
+@media screen and (max-width: 620px) {
+  .auth-page {
+    margin-top: 7.8rem;
+    min-height: calc(100vh - 7.8rem);
+    padding: 0.7rem;
   }
 }
 
 @media screen and (max-width: 520px) {
   .auth-page {
     padding: 0.55rem;
+    margin-top: 7.8rem;
+    min-height: calc(100vh - 7.8rem);
   }
 
   .form-container {
     padding: 1.1rem 0.95rem;
     border-radius: 14px;
+    max-width: 100%;
   }
 
   .form-container h2 {
@@ -156,20 +174,5 @@
   .form-container p {
     margin-top: 0.8rem;
     font-size: 0.92rem;
-  }
-
-  .auth-panel {
-    min-height: 180px;
-    border-radius: 14px;
-    background-position: center 60%;
-  }
-
-  .auth-panel h3 {
-    font-size: 1.35rem;
-  }
-
-  .auth-panel p {
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
   }
 }

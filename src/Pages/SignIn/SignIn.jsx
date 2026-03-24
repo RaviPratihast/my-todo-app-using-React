@@ -7,6 +7,7 @@ import "./SignIn.css";
 
 const SignIn = () => {
   const panelBackground = `${process.env.PUBLIC_URL}/image-landing.jpeg`;
+  const dotGridBg = `${process.env.PUBLIC_URL}/Dot grid@2x.png`;
   const navigate = useNavigate();
   const { stateAuth, dispatchAuth } = useAuth();
   const [formState, setFormState] = useState({
@@ -48,7 +49,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className="auth-page auth-page-sign-up">
+    <div className="auth-page auth-page-sign-up" style={{ "--auth-mobile-bg": `url("${dotGridBg}")` }}>
       <div className="form-container">
         <p className="auth-kicker">PersonalNote</p>
         <h2>Sign up</h2>

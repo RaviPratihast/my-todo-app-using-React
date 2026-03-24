@@ -27,8 +27,14 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .bin-container {
+    margin-top: 8.2rem;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .bin-container {
-    margin-top: 7.45rem;
+    margin-top: 8.4rem;
   }
 }

@@ -38,7 +38,9 @@
 
 .icon {
   font-size: 2rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   cursor: pointer;
   background-color: var(--surface);
   border-radius: 10px;
@@ -86,7 +88,8 @@
   }
 
   .icon {
-    font-size: 1.45rem;
-    padding: 0.28rem;
+    font-size: 1.75rem;
+    padding: 0.4rem;
+    border-radius: 12px;
   }
 }
