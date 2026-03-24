@@ -40,6 +40,20 @@ const notesReducer = (state, action) => {
         searchQuery: action.payload,
       };
 
+    case "UPDATE_NOTE_BY_ID":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note.id === action.payload.id ? { ...note, ...action.payload.updates } : note
+        ),
+        archive: state.archive.map((note) =>
+          note.id === action.payload.id ? { ...note, ...action.payload.updates } : note
+        ),
+        deletedNote: state.deletedNote.map((note) =>
+          note.id === action.payload.id ? { ...note, ...action.payload.updates } : note
+        ),
+      };
+
       case "ARCHIVE_NOTE":
         const archivedNote = state.notes.find(
           (note) => note.id === action.payload

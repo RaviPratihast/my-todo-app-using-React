@@ -2,12 +2,24 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNotes } from "../../Context/NoteContext";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "../index-component";
 import { MdRestore } from "react-icons/md";
 import { BiArchiveIn } from "react-icons/bi";
 import { MdOutlineUnarchive } from "react-icons/md";
 import { toast } from "react-toastify";
+import ReactQuill from "react-quill";
 import "./cards.css";
+import "react-quill/dist/quill.snow.css";
+
+const modalEditorModules = {
+  toolbar: [
+    ["bold", "italic", "underline", "strike"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    ["link"],
+    ["clean"],
+  ],
+};
 
 function Card(props) {
   const location = useLocation();
@@ -15,6 +27,9 @@ function Card(props) {
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [isDetailVisible, setIsDetailVisible] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTitle, setEditedTitle] = useState(props.title);
+  const [editedContent, setEditedContent] = useState(props.content);
   const closeTimeoutRef = useRef(null);
 
   const isNotes = location.pathname === "/notes";
@@ -29,6 +44,11 @@ function Card(props) {
     return (tempElement.textContent || tempElement.innerText || "").trim();
   }, [props.content]);
   const shouldShowPreviewHint = isMobileView && plainTextContent.length > 40;
+
+  useEffect(() => {
+    setEditedTitle(props.title);
+    setEditedContent(props.content);
+  }, [props.title, props.content]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 780px)");
@@ -50,7 +70,7 @@ function Card(props) {
 
     function handleEscape(event) {
       if (event.key === "Escape") {
-        setIsDetailOpen(false);
+        closeDetailModal();
       }
     }
 
@@ -80,14 +100,59 @@ function Card(props) {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
     }
+    setEditedTitle(props.title);
+    setEditedContent(props.content);
+    setIsEditing(false);
     setIsDetailOpen(true);
   }
 
   function closeDetailModal() {
     setIsDetailVisible(false);
+    setIsEditing(false);
     closeTimeoutRef.current = window.setTimeout(() => {
       setIsDetailOpen(false);
     }, 220);
+  }
+
+  function handleStartEdit(event) {
+    event.stopPropagation();
+    setIsEditing(true);
+  }
+
+  function handleCancelEdit(event) {
+    event.stopPropagation();
+    setEditedTitle(props.title);
+    setEditedContent(props.content);
+    setIsEditing(false);
+  }
+
+  function handleSaveEdit(event) {
+    event.stopPropagation();
+    const normalizedTitle = editedTitle.trim();
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = editedContent;
+    const normalizedContentText = (tempElement.textContent || tempElement.innerText || "")
+      .trim()
+      .replace(/\u00a0/g, "");
+
+    if (!normalizedTitle || !normalizedContentText) {
+      toast.error("Title and content are required.", { autoClose: 900 });
+      return;
+    }
+
+    dispatch({
+      type: "UPDATE_NOTE_BY_ID",
+      payload: {
+        id: props.id,
+        updates: {
+          title: normalizedTitle,
+          content: editedContent,
+        },
+      },
+    });
+
+    setIsEditing(false);
+    toast.success("Note updated successfully.", { autoClose: 700 });
   }
 
   function HandleDelete(event) {
@@ -188,13 +253,51 @@ function Card(props) {
           >
             x
           </button>
-          <div className="card-detail-top">
-            <h2>{props.title}</h2>
+          <div className="card-detail-actions">
+            {!isEditing ? (
+              <Button className="card-detail-action-btn" onClick={handleStartEdit}>
+                <EditIcon fontSize="inherit" />
+                Edit
+              </Button>
+            ) : (
+              <>
+                <Button className="card-detail-action-btn secondary" onClick={handleCancelEdit}>
+                  Cancel
+                </Button>
+                <Button className="card-detail-action-btn" onClick={handleSaveEdit}>
+                  Save
+                </Button>
+              </>
+            )}
           </div>
-          <div
-            className="card-detail-content"
-            dangerouslySetInnerHTML={{ __html: props.content }}
-          />
+          <div className="card-detail-top">
+            {isEditing ? (
+              <input
+                type="text"
+                value={editedTitle}
+                onChange={(event) => setEditedTitle(event.target.value)}
+                className="card-detail-title-input"
+                placeholder="Title"
+              />
+            ) : (
+              <h2>{props.title}</h2>
+            )}
+          </div>
+          {isEditing ? (
+            <div className="card-detail-editor-container">
+              <ReactQuill
+                value={editedContent}
+                onChange={setEditedContent}
+                modules={modalEditorModules}
+                placeholder="Edit note content..."
+              />
+            </div>
+          ) : (
+            <div
+              className="card-detail-content"
+              dangerouslySetInnerHTML={{ __html: props.content }}
+            />
+          )}
         </div>
       </div>
     ) : null}

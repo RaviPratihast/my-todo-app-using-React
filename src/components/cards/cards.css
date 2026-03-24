@@ -172,6 +172,33 @@
   cursor: pointer;
 }
 
+.card-detail-actions {
+  position: absolute;
+  top: 0.95rem;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.card-detail-action-btn {
+  min-height: 2rem;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(17, 20, 27, 0.62);
+  color: #f3f5f9;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.card-detail-action-btn.secondary {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .card-detail-top {
   min-height: 30vh;
   display: flex;
@@ -184,6 +211,18 @@
   font-family: "IBM Plex Sans", sans-serif;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   line-height: 1.2;
+}
+
+.card-detail-title-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 12px;
+  background: rgba(10, 15, 24, 0.45);
+  color: #f5f7fb;
+  padding: 0.72rem 0.84rem;
+  font-size: clamp(1.35rem, 4vw, 2.05rem);
+  font-weight: 600;
+  outline: none;
 }
 
 .card-detail-content {
@@ -227,6 +266,39 @@
   margin: 0.3rem 0;
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+.card-detail-editor-container {
+  background: #ffffff;
+  padding: 1.1rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-detail-editor-container .quill {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-detail-editor-container .ql-toolbar.ql-snow {
+  border: 1px solid #dde0e6 !important;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-detail-editor-container .ql-container.ql-snow {
+  border: 1px solid #dde0e6 !important;
+  border-top: none !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  flex: 1;
+}
+
+.card-detail-editor-container .ql-editor {
+  min-height: 220px;
 }
 
 @media screen and (max-width: 640px) {
@@ -284,6 +356,16 @@
 
   .card-preview-hint {
     font-size: 0.7rem;
+  }
+
+  .card-detail-actions {
+    top: 0.8rem;
+    right: 3.6rem;
+  }
+
+  .card-detail-action-btn {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.55rem;
   }
 }
 
