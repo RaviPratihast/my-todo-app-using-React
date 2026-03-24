@@ -7,12 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 
 const Notes = () => {
   const { state, dispatch } = useNotes();
-  const pageBackgroundStyle = {
-    backgroundImage: `url("${process.env.PUBLIC_URL}/Dot grid@2x.png")`,
-    backgroundRepeat: "repeat",
-    backgroundSize: "420px auto",
-    backgroundPosition: "center top",
-  };
   const filteredNotes = state.notes.filter((note) =>
     note.title.toLowerCase().includes(state.searchQuery)
   );
@@ -36,7 +30,7 @@ const Notes = () => {
   return (
     <>
       <Sidenav />
-      <div className="main-app-container" style={pageBackgroundStyle}>
+      <div className="main-app-container">
         <Input onAdd={addNotes} />
         <div className="card-element-section">
           {filteredNotes.length > 0 ? (

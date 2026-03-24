@@ -6,12 +6,6 @@ import "./Bin.css";
 
 const Bin = () => {
   const { state, dispatch } = useNotes();
-  const pageBackgroundStyle = {
-    backgroundImage: `url("${process.env.PUBLIC_URL}/Dot grid@2x.png")`,
-    backgroundRepeat: "repeat",
-    backgroundSize: "420px auto",
-    backgroundPosition: "center top",
-  };
 
   const deleteNotePermanently = (id) => {
     dispatch({ type: "DELETE_NOTE_PERMANENTLY", payload: id });
@@ -21,7 +15,7 @@ const Bin = () => {
   return (
     <>
       <Sidenav />
-      <div className="bin-container" style={pageBackgroundStyle}>
+      <div className="bin-container">
         {state.deletedNote.length === 0 ? (
           <div className="empty-container-message">
             <p>No Notes in Trash</p>
