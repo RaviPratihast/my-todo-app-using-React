@@ -3,17 +3,20 @@ function AuthReducer(stateAuth, actionAuth) {
     case "USER_LOGGED_IN":
       return {
         ...stateAuth,
-        loggedIn: !stateAuth.loggedIn,
+        loggedIn: actionAuth.payload?.loggedIn ?? true,
+        currentUser: actionAuth.payload?.currentUser ?? stateAuth.currentUser,
       };
     case "GUEST_USER_LOGGED_IN":
       return {
         ...stateAuth,
-        loggedIn: !stateAuth.loggedIn,
+        loggedIn: actionAuth.payload?.loggedIn ?? true,
+        currentUser: actionAuth.payload?.currentUser ?? "Guest",
       };
     case "USER_LOGOUT":
       return {
         ...stateAuth,
-        loggedIn: !stateAuth.loggedIn,
+        loggedIn: actionAuth.payload?.loggedIn ?? false,
+        currentUser: null,
       };
     case "SIGN_IN":
       return {

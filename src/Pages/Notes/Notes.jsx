@@ -7,6 +7,15 @@ import { v4 as uuidv4 } from "uuid";
 
 const Notes = () => {
   const { state, dispatch } = useNotes();
+  const pageBackgroundStyle = {
+    backgroundImage: `url("${process.env.PUBLIC_URL}/Dot grid@2x.png")`,
+    backgroundRepeat: "repeat",
+    backgroundSize: "420px auto",
+    backgroundPosition: "center top",
+  };
+  const filteredNotes = state.notes.filter((note) =>
+    note.title.toLowerCase().includes(state.searchQuery)
+  );
 
   function addNotes(newNote) {
     dispatch({
@@ -27,18 +36,22 @@ const Notes = () => {
   return (
     <>
       <Sidenav />
-      <div className="main-app-container">
+      <div className="main-app-container" style={pageBackgroundStyle}>
         <Input onAdd={addNotes} />
         <div className="card-element-section">
-          {state.notes.map((note) => (
-            <Card
-              key={note.id}
-              id={note.id}
-              title={note.title}
-              content={note.content}
-              onDelete={deleteNote}
-            />
-          ))}
+          {filteredNotes.length > 0 ? (
+            filteredNotes.map((note) => (
+              <Card
+                key={note.id}
+                id={note.id}
+                title={note.title}
+                content={note.content}
+                onDelete={deleteNote}
+              />
+            ))
+          ) : (
+            <p className="empty-container-message">No notes found.</p>
+          )}
         </div>
       </div>
     </>

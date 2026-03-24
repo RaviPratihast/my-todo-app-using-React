@@ -1,0 +1,10 @@
+@import "../Login/Login.css";
+
+.auth-page-sign-up .auth-panel-sign-up {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.86), rgba(251, 251, 254, 0.9)),
+    #f4f5f7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 78%;
+}

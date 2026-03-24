@@ -14,8 +14,24 @@ const Navbar = () => {
   const { stateAuth, dispatchAuth } = useAuth();
 
   // const isNotes = location.pathname === "/notes";
+  function getInitials(name) {
+    if (!name) {
+      return "U";
+    }
+    const segments = name.trim().split(/\s+/);
+    const initials = segments
+      .slice(0, 2)
+      .map((segment) => segment.charAt(0).toUpperCase())
+      .join("");
+    return initials || "U";
+  }
 
   function HandleLogout() {
+    if (!stateAuth.loggedIn) {
+      navigate("/login");
+      return;
+    }
+
     dispatchAuth({ type: "USER_LOGOUT", payload: { loggedIn: false } });
     navigate("/");
     toast.success("Successfully logged out", { autoClose: 500 });
@@ -29,6 +45,13 @@ const Navbar = () => {
           </li>
         )} */}
 
+        {stateAuth.loggedIn ? (
+          <li className="avatar-list-item">
+            <div className="navbar-avatar" title={stateAuth.currentUser || "User"}>
+              {getInitials(stateAuth.currentUser)}
+            </div>
+          </li>
+        ) : null}
         <li onClick={() => HandleLogout()}>
           {!stateAuth.loggedIn ? (
             <CiLogin className="icon" />

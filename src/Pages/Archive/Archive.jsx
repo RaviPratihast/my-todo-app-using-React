@@ -6,7 +6,12 @@ import "./Archive.css";
 
 const Archive = () => {
   const { state, dispatch } = useNotes();
-  console.log(state.archive);
+  const pageBackgroundStyle = {
+    backgroundImage: `url("${process.env.PUBLIC_URL}/Dot grid@2x.png")`,
+    backgroundRepeat: "repeat",
+    backgroundSize: "420px auto",
+    backgroundPosition: "center top",
+  };
 
   function deleteNote(id) {
     dispatch({
@@ -21,7 +26,7 @@ const Archive = () => {
   return (
     <>
       <Sidenav />
-      <div className="archive-container">
+      <div className="archive-container" style={pageBackgroundStyle}>
         {state.archive.length === 0 ? (
           <p className="empty-container-message">No Notes in Archive</p>
         ) : (

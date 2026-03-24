@@ -3,23 +3,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: min(760px, 100%);
   margin-top: 2rem;
   margin-inline: auto;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  border-radius: 14px;
   position: relative;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgb(218, 211, 211);
+  box-shadow: 0 18px 42px rgba(20, 25, 38, 0.07);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface);
+  overflow: visible;
 }
 
 .input-container > input {
-  font-size: 18px;
+  font-size: 1rem;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 0.7rem 0.55rem;
   border: none;
   outline: none;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 0.35rem;
+}
+
+.quill {
+  width: 100%;
 }
 
 .ql-container.ql-snow {
@@ -27,11 +35,13 @@
 }
 .ql-toolbar.ql-snow {
   border: none !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
 }
 .quill .ql-editor {
   max-height: 10rem;
   min-height: 4rem;
   overflow-y: auto;
+  font-size: 0.95rem;
 }
 
 .input-container > textarea {
@@ -45,26 +55,69 @@
 }
 
 .input-container > .add-button {
-  font-weight: bold;
+  font-weight: 600;
   position: absolute;
-  bottom: -20px;
+  bottom: -18px;
   right: 15px;
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(110, 108, 108);
+  background-color: #101114;
   transition: all 0.3s ease;
 }
 
 .input-container button:hover {
-  background-color: rgb(195, 197, 199);
+  background-color: #2b2f39;
 }
 
-.nav-link-routes {
-  text-decoration: none;
+@media screen and (max-width: 780px) {
+  .input-container {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.55rem 0.55rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .input-container > input {
+    font-size: 0.95rem;
+    padding: 0.58rem 0.35rem;
+  }
+
+  .quill .ql-editor {
+    min-height: 3.2rem;
+    font-size: 0.92rem;
+  }
+
+  .ql-toolbar.ql-snow {
+    padding: 0.4rem 0.35rem !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ql-toolbar.ql-snow .ql-formats {
+    margin-right: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .input-container > .add-button {
+    width: 36px;
+    height: 36px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .quill .ql-editor {
+    padding-bottom: 2.4rem;
+  }
 }

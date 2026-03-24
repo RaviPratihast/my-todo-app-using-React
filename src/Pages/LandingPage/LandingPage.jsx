@@ -5,7 +5,7 @@ import { Button } from "../../components/index-component";
 import { useAuth } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
-  const { StateAuth } = useAuth();
+  const { stateAuth } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -13,21 +13,24 @@ const LandingPage = () => {
       <div className="home-wrapper">
         <div className="home-content">
           <div className="home-text">
+            <p className="home-kicker">Monospace Workflow</p>
             <h1>
               Personal<span>Note</span>
               <FaPen className="note-icon" />
             </h1>
-            <p>Your thoughts, your space, your way.</p>
+            <p className="home-description">
+              Capture, archive, and recover ideas without breaking your flow.
+            </p>
           </div>
           <Button
             onClick={() =>
-              StateAuth && StateAuth.loggedIn
+              stateAuth && stateAuth.loggedIn
                 ? navigate("/notes")
                 : navigate("/login")
             }
             className="button-getting-started"
           >
-            Get Started
+            Open Workspace
           </Button>
         </div>
 

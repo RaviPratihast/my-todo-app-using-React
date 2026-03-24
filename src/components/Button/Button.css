@@ -1,15 +1,28 @@
 .base-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: rgb(0, 0, 0);
-  border: 1px solid black;
-  border-radius: 5px;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-inverse);
+  background-color: var(--surface-strong);
+  border: 1px solid var(--surface-strong);
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.18s ease, background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+  font-family: inherit;
 }
 
 .base-button:hover {
-  background-color: #f3f3f3;
-  color: black;
+  background-color: var(--surface-alt);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.base-button:active {
+  transform: scale(0.98);
+}
+
+.base-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

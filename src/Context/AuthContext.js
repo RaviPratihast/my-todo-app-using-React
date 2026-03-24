@@ -6,6 +6,7 @@ const useAuth = () => useContext(AuthContext);
 
 const initialState = {
   loggedIn: false,
+  currentUser: null,
   users: [
     { user: "Ravi", password: "123" },
     { user: "a", password: "1" },

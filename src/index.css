@@ -1,25 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg-page: #f3f3f3;
+  --surface: #ffffff;
+  --surface-alt: #f6f6f6;
+  --surface-strong: #101114;
+  --text-primary: #18191c;
+  --text-secondary: #575a61;
+  --text-muted: #7a7d84;
+  --text-inverse: #f8f9fb;
+  --border-subtle: #e4e5e8;
+  --border-strong: #cbcdd3;
+  --focus-ring: #8f95ff;
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
   scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
 }
-.empty-container-message{
+
+a {
+  color: inherit;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+.empty-container-message {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-inline: auto;
-  margin-top: 0.9rem;
-  font-weight: 700;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
-.empty-container-message  {
-  color: rgb(109, 109, 109);
 
+.Toastify__toast-container {
+  width: min(360px, calc(100vw - 1.25rem));
+  padding: 0.25rem;
+}
+
+.Toastify__toast-container.app-toast-container {
+  width: min(360px, calc(100vw - 1.25rem)) !important;
+  padding: 0.4rem !important;
+}
+
+.Toastify__toast.app-toast {
+  min-height: 54px;
+  margin-bottom: 0.5rem;
+  border-radius: 10px !important;
+  border: 1px solid #1f232b !important;
+  background: #101114 !important;
+  color: #f6f7f9 !important;
+  box-shadow: 0 12px 30px rgba(7, 8, 10, 0.3) !important;
+  padding: 0.58rem 0.75rem !important;
+}
+
+.Toastify__toast--success.app-toast {
+  border-left: 2px solid #6f7584 !important;
+}
+
+.Toastify__toast--info.app-toast {
+  border-left: 2px solid #6f7584 !important;
+}
+
+.Toastify__toast--error.app-toast {
+  border-left: 2px solid #8f95ff !important;
+}
+
+.Toastify__toast-body.app-toast-body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #eef0f3 !important;
+  font-weight: 500;
+}
+
+.Toastify__close-button {
+  color: var(--text-secondary);
+  opacity: 1;
+  align-self: center;
+}
+
+.Toastify__close-button:hover {
+  color: var(--text-primary);
+}
+
+.Toastify__progress-bar.app-toast-progress {
+  background: #8f95ff !important;
+  height: 2px;
 }
